@@ -23,3 +23,13 @@
 >Setelah itu lakukan restart dengan cara ``service bind9 restart``. dan restart telah berhasil seperti gambar dibawah ini
 
 ![picture](https://cdn.discordapp.com/attachments/777146787336290354/777148753953030174/1.4_restart_berhasil.JPG)
+
+>Setting Domain nameserver dan arahkan menuju IP Malang agar domain yang kita buat dapat dikenali oleh client. Setting pada client gresik dengan cara ``nano /etc/resolv.conf``
+
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777150869338587136/1.5_setting_nameserver_gresik.JPG)
+
+>Setting Domain nameserver dan arahkan menuju IP Malang agar domain yang kita buat dapat dikenali oleh client. Setting pada client sidoarjo dengan cara ``nano /etc/resolv.conf``
+
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777152490365124638/1.6_setting_nameserver_sidoarjo.JPG)
+
+>
