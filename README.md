@@ -38,6 +38,36 @@
 <br />
 ![picture](https://cdn.discordapp.com/attachments/777146787336290354/777154449364746271/1.7_sukses_sidoarjo.JPG)
 
+### Soal 2 :
+### Membuat alias ```http://www.semerut16.pw```.
+
+>Membuka file pada server malang dengan cara ``nano /etc/bind/jarkom/semerut16.pw`` dan tambahkan konfigurasi seperti dibawah ini.
+
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777234383177383956/2.1_alias_semeru_setting_file.JPG)
+
+>Kemudian lakukan testing dengan cara ``host -t CNAME http://www.semerut16.pw`` seperti gambar dibawah ini. Dan hasilnya seperti dibawah ini.
+
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777234897772740618/2.2_sukses_ping_alias.JPG)
+
+### Soal 3 :
+### Membuat subdomain ```http://penanjakan.semerut16.pw``` yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO.
+
+>Membuka dan mengedit file pada server malang dengan cara ``nano /etc/bind/jarkom/jarkom2020.com`` lalu tambahkan subdomain yang mengarah ke IP MALANG. Tambahkan konfigurasi seperti gambar dibawah.
+
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777243038807883816/3.1_subdomain_penanjakan.JPG)
+
+>Kemudian lakukan restart service bind dengan perintah ``restart service bind9``. Setelah itu lakukan ping ke subdomain dengan perintah ``ping penanjakan.semerut16.pw`` atau dengan ``host -t A penanjakan.semerut16.pw``. Dan hasil dari perintah tersebut seperti gambar dibawah.
+
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777249397385068615/3.2_sukses_ping_subdomain.JPG)
+
+### Soal 4 :
+### Membuat reverse domain untuk domain utama.
+
+>Buka dan edit file /etc/bind/named.conf.local pada MALANG dengan perintah ``nano /etc/bind/named.conf.local`` 
+>Lalu tambahkan konfigurasi seperti ini.
+
+
+
 
 
 
