@@ -5,3 +5,5 @@
 ## I Gede Pradhana Indra Widnyana (05311840000031)
 
 -----------------------------------
+### Soal 1 :
+### Membuat web utama dengan alamat ```http://semerut16.pw```
