@@ -63,8 +63,15 @@
 ### Soal 4 :
 ### Membuat reverse domain untuk domain utama.
 
->Buka dan edit file /etc/bind/named.conf.local pada MALANG dengan perintah ``nano /etc/bind/named.conf.local`` 
+>Buka dan edit file /etc/bind/named.conf.local pada MALANG dengan perintah ``nano /etc/bind/named.conf.local``. 
+
 >Lalu tambahkan konfigurasi seperti ini.
+```zone "77.151.10.in-addr.arpa" {
+    type master;
+    file "/etc/bind/jarkom/77.151.10.in-addr.arpa";
+};```
+
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777260448994689024/4.1_setting_conf_local_malang.JPG)
 
 
 
