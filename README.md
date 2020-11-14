@@ -7,3 +7,5 @@
 -----------------------------------
 ### Soal 1 :
 ### Membuat web utama dengan alamat ```http://semerut16.pw```
+
+>Membuat domain pada Malang sebagai DNS Server Master dengan cara  
