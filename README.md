@@ -156,9 +156,13 @@ zone "semerut16.pw" {
 ### Soal 7 :
 ### Membuat subdomain dengan nama http://naik.gunung.semeruyyy.pw, domain ini diarahkan ke IP Server PROBOLINGGO.
 
-- Buka dan edit file /etc/bind/delegasi/gunung.semerut16.pw dengan perintah ``nano /etc/bind/delegasi/gunung.semerut16.pw`` lalu tambahkan subdomain >naik.gunung.semeruyyy.pw yang mengarah ke probolinggo seperti pada gambar dibawah ini.
+- Buka dan edit file /etc/bind/delegasi/gunung.semerut16.pw dengan perintah ``nano /etc/bind/delegasi/gunung.semerut16.pw`` lalu tambahkan subdomain **naik.gunung.semeruyyy.pw** yang mengarah ke probolinggo seperti pada gambar dibawah ini.
 
 ![picture](https://cdn.discordapp.com/attachments/777146787336290354/777433398532243477/7.1_subdomain_naik_diarahkan_ke_probolinggo.JPG)
+
+- Kemudian lakukan ping ke domain naik.gunung.semerut16.pw melalui client GRESIK seperti pada gambar dibawah ini.
+
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777433881640042506/7.2_berhasil_ping_naik_gunung_semerut16.JPG)
 
 
 
