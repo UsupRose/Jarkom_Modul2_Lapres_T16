@@ -52,11 +52,11 @@
 ### Soal 3 :
 ### Membuat subdomain ```http://penanjakan.semerut16.pw``` yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO.
 
->Membuka dan mengedit file pada server malang dengan cara ``nano /etc/bind/jarkom/jarkom2020.com`` lalu tambahkan subdomain yang mengarah ke IP MALANG. Tambahkan konfigurasi seperti gambar dibawah.
+>Membuka dan mengedit file pada server malang dengan cara ``nano /etc/bind/jarkom/semerut16.pw`` lalu tambahkan subdomain yang mengarah ke IP MALANG. Tambahkan konfigurasi seperti gambar dibawah.
 
 ![picture](https://cdn.discordapp.com/attachments/777146787336290354/777243038807883816/3.1_subdomain_penanjakan.JPG)
 
->Kemudian lakukan restart service bind dengan perintah ``restart service bind9``. Setelah itu lakukan ping ke subdomain dengan perintah ``ping penanjakan.semerut16.pw`` atau dengan ``host -t A penanjakan.semerut16.pw``. Dan hasil dari perintah tersebut seperti gambar dibawah.
+>Kemudian lakukan restart service bind dengan perintah ``service bind9 restart``. Setelah itu lakukan ping ke subdomain dengan perintah ``ping penanjakan.semerut16.pw`` atau dengan ``host -t A penanjakan.semerut16.pw``. Dan hasil dari perintah tersebut seperti gambar dibawah.
 
 ![picture](https://cdn.discordapp.com/attachments/777146787336290354/777249397385068615/3.2_sukses_ping_subdomain.JPG)
 
@@ -65,13 +65,74 @@
 
 >Buka dan edit file /etc/bind/named.conf.local pada MALANG dengan perintah ``nano /etc/bind/named.conf.local``. 
 
->Lalu tambahkan konfigurasi seperti ini.
-
-``zone "77.151.10.in-addr.arpa" {
+>Lalu tambahkan konfigurasi seperti ini. 
+``` zone "77.151.10.in-addr.arpa" {
     type master;
     file "/etc/bind/jarkom/77.151.10.in-addr.arpa";
-};``
+ }; 
+ ```
+ 
 ![picture](https://cdn.discordapp.com/attachments/777146787336290354/777260448994689024/4.1_setting_conf_local_malang.JPG)
+
+>Kemudian copykan file db.local pada path /etc/bind/jarkom/77.151.10.in-addr.arpa dengan perintah ``nano /etc/bind/jarkom/77.151.10.in-addr.arpa`` dan edit sesuai gambar dibawah.
+
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777262191966552105/4.2_setting_in_addr_arpa.JPG)
+
+>Kemudian lakukan restart dengan perintah ``service bind9 restart``. Setelah itu pastikan nameserver telah dikembalikan seperti settingan awal seperti pada gambar dibawah ini.
+
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777405777601495040/4.3_mengembalikan_dns.JPG)
+
+>Untuk mengecek apakah konfigurasi sudah benar atau belum, lakukan install package dnsutils perintah berikut pada client GRESIK seperti pada gambar dibawah ini.
+```
+apt-get update
+apt-get install dnsutils
+```
+
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777407674902904842/4.4_sukses_update.JPG)
+<br />
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777407694126055464/4.5_sukses_dnsutil.JPG)
+
+>Kemudian kembalikan nameserver agar tersambung dengan MALANG dengan perintah ``host -t PTR "IP MALANG"`` seperti gambar dibawah ini.
+
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777408531934478336/4.6_sukses_pointing_host_ptr.JPG)
+
+### Soal 5 :
+### Membuat DNS Server Slave pada MOJOKERTO.
+
+>Membuka dan mengedit file pada server malang dengan perintah ``nano /etc/bind/named.conf.local``. dan sesuaikan dengan syntax dan gambar dibawah ini dibawah ini.
+```
+zone "semerut16.pw" {
+    type master;
+    notify yes;
+    also-notify { 10.151.77.179; }; // Masukkan IP MOJOKERTO
+    allow-transfer { 10.151.77.179; }; // Masukkan IP MOJOKERTO
+    file "/etc/bind/jarkom/semerut16.pw";
+};
+```
+
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777411258961625088/5.1_setting_malang_slave.JPG)
+
+>Kemudian Buka MOJOKERTO dan update package lists dengan menjalankan command ``apt-get update`` Setelah melakukan update silahkan install aplikasi bind9 pada MOJOKERTO dengan perintah ``apt-get install bind9 -y`` seperti gambar dibawah ini.
+
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777412013039157279/5.2_install_bind9_mojokerto.JPG)
+
+>Kemudian buka file /etc/bind/named.conf.local pada MOJOKERTO dengan perintah ``nano /etc/bind/named.conf.local``, dan tambahkan syntax seperti dibawah ini.
+```
+zone "semerut16.pw" {
+    type slave;
+    masters { 10.151.77.178; }; // Masukan IP MALANG 
+    file "/var/lib/bind/semerut16.pw";
+};
+```
+
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777413040080945162/5.3_setting_slave_mojokerto.JPG)
+
+>Setelah proses diatas selesai jangan lupan untuk melakukan restart dengan perintah ``service bind9 restart``
+
+
+
+
+
 
 
 
