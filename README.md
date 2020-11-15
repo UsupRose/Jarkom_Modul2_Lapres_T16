@@ -127,7 +127,9 @@ zone "semerut16.pw" {
 
 ![picture](https://cdn.discordapp.com/attachments/777146787336290354/777413040080945162/5.3_setting_slave_mojokerto.JPG)
 
->Setelah proses diatas selesai jangan lupan untuk melakukan restart dengan perintah ``service bind9 restart``
+- Setelah proses diatas selesai jangan lupan untuk melakukan restart dengan perintah ``service bind9 restart``
+
+
 
 
 
