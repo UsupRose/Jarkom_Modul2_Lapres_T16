@@ -141,9 +141,24 @@ zone "semerut16.pw" {
 
 ![picture](https://cdn.discordapp.com/attachments/777146787336290354/777424654867890176/6.1_setting_subdomain_gunung.JPG)
 
-- 
+- Kemudian edit file /etc/bind/named.conf.local menjadi seperti gambar di bawah pada malang dengan command ``nano /etc/bind/named.conf.local`` seperti pada gambar dibawah ini.
 
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777431817242279936/6.2_setting_local_pada_malang.JPG)
 
+- Kemudian edit file /etc/bind/named.conf.local menjadi seperti gambar di bawah pada mojokerto dengan command ``nano /etc/bind/named.conf.local`` seperti pada gambar dibawah ini.
+
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777432026747109397/6.3_setting_local_mojokerto.JPG)
+
+- Kemudian lakukan ping ke domain gunung.semerut16.pw melalui client GRESIK seperti pada gambar dibawah ini.
+
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777432439399383050/6.4_berhasil_ping_gunung_semeru.JPG)
+
+### Soal 7 :
+### Membuat subdomain dengan nama http://naik.gunung.semeruyyy.pw, domain ini diarahkan ke IP Server PROBOLINGGO.
+
+- Buka dan edit file /etc/bind/delegasi/gunung.semerut16.pw dengan perintah ``nano /etc/bind/delegasi/gunung.semerut16.pw`` lalu tambahkan subdomain >naik.gunung.semeruyyy.pw yang mengarah ke probolinggo seperti pada gambar dibawah ini.
+
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777433398532243477/7.1_subdomain_naik_diarahkan_ke_probolinggo.JPG)
 
 
 
