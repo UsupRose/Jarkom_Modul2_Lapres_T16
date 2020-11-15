@@ -129,12 +129,19 @@ zone "semerut16.pw" {
 
 - Setelah proses diatas selesai jangan lupan untuk melakukan restart dengan perintah ``service bind9 restart``
 
+- Pada server MALANG silahkan matikan service bind9 dengan command ``service bind9 stop``. Pastikan pengaturan nameserver mengarah ke IP MALANG dan IP MOJOKERTO pada client gresik.
+- Lakukan ping ke ``semerut16.pw`` pada client GRESIK. Jika ping berhasil maka konfigurasi DNS slave telah berhasil.
 
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777423567214084096/5.4_sukses_slave.JPG)
 
+### Soal 6 :
+### Membuat subdomain dengan alamat http://gunung.semerut16.pw yang didelegasikan pada server MOJOKERTO dan mengarah ke IP Server PROBOLINGGO.
 
+- Buka dan edit file /etc/bind/jarkom/semerut16.pw dengan perintah ``nano /etc/bind/jarkom/semerut16.pw`` lalu tambahkan subdomain seperti pada gambar dibawah ini.
 
+![picture](https://cdn.discordapp.com/attachments/777146787336290354/777424654867890176/6.1_setting_subdomain_gunung.JPG)
 
-
+- 
 
 
 
